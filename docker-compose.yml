@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: spring04
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql
+      - ./full-backup.sql:/docker-entrypoint-initdb.d/full-backup.sql
     restart: always
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
